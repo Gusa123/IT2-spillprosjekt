@@ -33,6 +33,23 @@ prossesen av oppbygningen til spillet:
 - nå vil jeg at pipene skal fortsete å dukke opp så lenge game_over == False. hvis tiden_nå minus siste_pipe er større en pipe-frequensien, betyr det et dte har gått nok tid til at dte er på tide å lage ny pipe
 
 8. lage kollisjoner
-- nå skla jeg lage kolisjon mellom fugelen og pipene
+- nå skla jeg lage kolisjon mellom fugelen og pipene. sier at hvis firkanten rundt fugl bildet, kolliderer med firkanten rundt pipebildet, så er game_over= true
+
+9. Legge til poeg teller
+- for å få poeng må fugelen ha pasert pipa. 
+- i pipe klassen skriver jeg at pipe.passed= false.
+- deretter sier jeg at hvis et hvist punkt på fugelen, har pasert et hvist punkt på pipen så er pipe.passed = True. når pipe.passed er true får du et halvt poeng. grunne til at jeg skriver 0.5 poeng er fordi det er to rør fugelen krysser. og jeg vil få et halvt poeng fra begge
+
+10. RESTART KNAPP
+- starter med å lage en Knapp-klasse.
+- først definerer jeg knappen, lager en boks rundt den og gir den x og y kordinater. deretter skriver jeg at når game over == True, så skal denne knappen dukke opp
+-så lager jeg draw funksjonen. her skjekker jeg først posisjonen til pilen, så ser jeg om dne kolliderer med restart knapen, så skjekke rjeg om jeg trykker på venstre tasten. om jeg trykke rpå knappen nå så vil actions som før var false, nå være True.
+- i spill.py har vi en knapp.draw funksjon, og nå vil denne også returnere noe til oss. Hvis denne funksjonen == true, altså at action == true, så vil gme over og game start nå være False. 
+
+11. lager en restart funksjon
+- dette er den funksjonen som skal få spillet til å starte på nytt. 
+- i denne funksjonen sier jeg at pipe_groupen skal være tom. 
+- deretter skal fugelen plaseres tilbake til start, og scoren skal være 0 igjenn
+- men når vi bare har dette så begynner graviditeten med en gang vi trykker restart som gjør at man dør med en gang. derfor lager jeg også en Stopp funksjon i Fugl, som gjør at gravidasjonen er 0. dette gjør at fuglen står helt stille når du har restartet spillet.
 
 

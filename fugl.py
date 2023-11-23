@@ -20,7 +20,6 @@ class Fugl():
         self.counter=0 #kontrolerer farten på hvordan animasjonen skal foregå
         self.image= self.images[self.index]#self.image vil bli det bilde som indexen indikerer til
         
-       
     def beveg_fugl(self): 
         self.fart += self.tyngdekraft # Opddaterer farten med tyngdeakselerasjonen
         if self.rect.bottom <668: #gjelder kun så lenge fuggelen er over bakken
@@ -46,7 +45,11 @@ class Fugl():
     def flaks(self): #har dette i en egen slik at tyngdekraftn ikke begynner før du har trykket på space knappen
         self.tyngdekraft = 0.4 
         self.fart = -10
-        
+
+    def stopp(self): #når du restarter spillet så skal ikke fuglen stupåe ned med en gang
+
+        self.tyngdekraft = 0
+        self.fart = 0
         
 
        

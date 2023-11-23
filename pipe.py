@@ -12,7 +12,7 @@ class Pipe(pygame.sprite.Sprite):
             self.rect.bottomleft = [x, y - int(pipe_gap/2 )] #siden bildet er flippet, så ønsker vi at x og y skal være fra nede-venstre
         if position == -1:
             self.rect.topleft=[x,y +int(pipe_gap/2 )] #Dette setter posisjonen til røret ved å tilordne verdien av x og y til topp-venstre hjørne av rektangelet (self.rect). Dermed blir røret plassert på den angitte posisjonen.
-
+        self.passed= False
 
     def update(self, skroll_speed):
         self.rect.x -= skroll_speed
